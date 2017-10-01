@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <script type="text/javascript" src="../build/react.js"></script>
+    <script type="text/javascript" src="../build/react-dom.js"></script>
+    <script type="text/javascript" src="../build/browser.min.js"></script>
+    <script type="text/javascript" src="../build/utils.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+	//此处的命名规则
+	var MyMessage = React.createClass({
+		render(){
+			return <h1>hello {this.props.text}</h1>
+		}
+	});
+	ReactDOM.render(<MyMessage text='world'/>,Q('app'));
+</script>
+</html>

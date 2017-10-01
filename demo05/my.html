@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <script type="text/javascript" src="../build/react.js"></script>
+    <script type="text/javascript" src="../build/react-dom.js"></script>
+    <script type="text/javascript" src="../build/browser.min.js"></script>
+    <script type="text/javascript" src="../build/utils.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+	//处理自定义组件的内容 当return的内容很多的时候 可以用()包裹
+	var Parent = React.createClass({
+		render(){
+			return (<ul>
+				{React.Children.map(this.props.children,function(child){
+					return <li>hello {child}</li>
+				})}
+			</ul>)
+		}
+	});
+	ReactDOM.render(
+	(<Parent>
+		<span>world</span>
+		<span>java</span>
+	</Parent>),Q('app'));
+</script>
+</html>
